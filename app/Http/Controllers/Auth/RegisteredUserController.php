@@ -38,26 +38,29 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
+        // バリデーション設定
+        $rules = [
+            'over_name' => 'required|string|max:10',
+            'under_name' => 'required|string|max:10',
+            'over_name_kana' => 'required|string|regex:/^[ァ-ヴー]+$/u|max:30',
+            'under_name_kana' => 'required|string|regex:/^[ァ-ヴー]+$/u|max:30',
+            'mail_address' => 'required|email|unique:users|max:100',
+            'sex' => 'required|numeric|max:3',
+            'old_year' => 'required|numeric|min:2000',
+            'old_month' => 'required|numeric|min:1|max:12',
+            'old_day' => 'required|numeric|min:1|max:31',
+            'role' => 'required|numeric|max:4',
+            'password' => 'required|alpha_num|min:8|max:30|confirmed',
+            'old_year' . '-' . 'old_month' . '-' . 'old_day' => 'date|after:2000-01-01|before:today',
+        ];
+        $request->validate($rules);
+        dump($request);
+
+
+
         DB::beginTransaction();
         try{
 
-            // バリデーション設定
-            $rules = [
-                'over_name' => 'required|string|max:10',
-                'under_name' => 'required|string|max:10',
-                'over_name_kana' => 'required|string|regex:/^[ァ-ヴー]+$/u|max:30',
-                'under_name_kana' => 'required|string|regex:/^[ァ-ヴー]+$/u|max:30',
-                'mail_address' => 'required|email|unique:users|max:100',
-                'sex' => 'required|numeric|max:3',
-                'old_year' => 'required|numeric|min:2000',
-                'old_month' => 'required|numeric|min:1|max:12',
-                'old_day' => 'required|numeric|min:1|max:31',
-                'role' => 'required|numeric|max:4',
-                'password' => 'required|alpha_num|min:8|max:30|confirmed',
-                'old_year' . '-' . 'old_month' . '-' . 'old_day' => 'date|after:2000-01-01|before:today',
-            ];
-            $request->validate($rules);
-            dump($request);
 
             $old_year = $request->old_year;
             $old_month = $request->old_month;

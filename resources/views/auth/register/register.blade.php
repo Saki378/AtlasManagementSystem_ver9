@@ -2,7 +2,14 @@
   <form action="{{ route('registerPost') }}" method="POST">
     <div class="w-100 vh-100 d-flex" style="align-items:center; justify-content:center;">
       <div class="w-25 vh-75 border p-3">
+
         <div class="register_form">
+            @error('over_name')
+            <p>{{ $message}}</p>
+            @enderror
+            @error('under_name')
+            <p>{{ $message}}</p>
+            @enderror
           <div class="d-flex mt-3" style="justify-content:space-between">
             <div class="" style="width:140px">
               <label class="d-block m-0" style="font-size:13px">姓</label>
@@ -17,6 +24,12 @@
               </div>
             </div>
           </div>
+            @error('over_name_kana')
+            <p>{{ $message}}</p>
+            @enderror
+            @error('under_name_kana')
+            <p>{{ $message}}</p>
+            @enderror
           <div class="d-flex mt-3" style="justify-content:space-between">
             <div class="" style="width:140px">
               <label class="d-block m-0" style="font-size:13px">セイ</label>
@@ -31,6 +44,9 @@
               </div>
             </div>
           </div>
+            @error('mail_address')
+            <p>{{ $message}}</p>
+            @enderror
           <div class="mt-3">
             <label class="m-0 d-block" style="font-size:13px">メールアドレス</label>
             <div class="border-bottom border-primary">
@@ -38,6 +54,9 @@
             </div>
           </div>
         </div>
+            @error('sex')
+            <p>{{ $message}}</p>
+            @enderror
         <div class="mt-3">
           <input type="radio" name="sex" class="sex" value="1">
           <label style="font-size:13px">男性</label>
@@ -46,6 +65,15 @@
           <input type="radio" name="sex" class="sex" value="3">
           <label style="font-size:13px">その他</label>
         </div>
+            @error('old_year')
+            <p>{{ $message}}</p>
+            @enderror
+            @error('old_month')
+            <p>{{ $message}}</p>
+            @enderror
+            @error('old_day')
+            <p>{{ $message}}</p>
+            @enderror
         <div class="mt-3">
           <label class="d-block m-0 aa" style="font-size:13px">生年月日</label>
           <select class="old_year" name="old_year">
@@ -130,6 +158,9 @@
           </select>
           <label style="font-size:13px">日</label>
         </div>
+             @error('role')
+            <p>{{ $message}}</p>
+            @enderror
         <div class="mt-3">
           <label class="d-block m-0" style="font-size:13px">役職</label>
           <input type="radio" name="role" class="admin_role role" value="1">
@@ -150,6 +181,9 @@
           </div>
           @endforeach
         </div>
+        @error('password')
+        <p>{{ $message}}</p>
+        @enderror
         <div class="mt-3">
           <label class="d-block m-0" style="font-size:13px">パスワード</label>
           <div class="border-bottom border-primary">
