@@ -46,12 +46,9 @@ class RegisteredUserController extends Controller
             'under_name_kana' => 'required|string|regex:/^[ァ-ヴー]+$/u|max:30',
             'mail_address' => 'required|email|unique:users|max:100',
             'sex' => 'required|numeric|max:3',
-            'old_year' => 'required|numeric|min:2000',
-            'old_month' => 'required|numeric|min:1|max:12',
-            'old_day' => 'required|numeric|min:1|max:31',
             'role' => 'required|numeric|max:4',
             'password' => 'required|alpha_num|min:8|max:30|confirmed',
-            'old_year' . '-' . 'old_month' . '-' . 'old_day' => 'date|after:2000-01-01|before:today',
+            'old_year' . '-' . 'old_month' . '-' . 'old_day' => 'required|date|after:2000-01-01|before:today',
         ];
         $request->validate($rules);
         dump($request);
