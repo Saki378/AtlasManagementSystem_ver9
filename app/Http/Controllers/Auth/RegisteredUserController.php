@@ -51,8 +51,6 @@ class RegisteredUserController extends Controller
             'old_year' . '-' . 'old_month' . '-' . 'old_day' => 'required|date|after:2000-01-01|before:today',
         ];
         $request->validate($rules);
-        dump($request);
-
 
 
         DB::beginTransaction();
