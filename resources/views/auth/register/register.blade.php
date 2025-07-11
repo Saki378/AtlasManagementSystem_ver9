@@ -65,7 +65,7 @@
           <input type="radio" name="sex" class="sex" value="3">
           <label style="font-size:13px">その他</label>
         </div>
-            @error('old_year' . '-' . 'old_month' . '-' . 'old_day')
+            @error('birth_day')
             <p>{{ $message}}</p>
             @enderror
         <div class="mt-3">
