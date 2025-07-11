@@ -21,36 +21,6 @@
           {{$like->likeCounts($post->id)}}
         </div>
       </div>
-
-      @if(Auth::id()==$post->user->id)
-      <!-- 編集・削除・機能 -->
-      <div>
-        <a class="js-modal-open edit-modal-open"  post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</a>
-        <!-- 投稿削除ボタン -->
-        <a class="btn btn-danger" href="delete/{{$post->id}}" onclick='return confirm("本当に削除しますか？")'>削除</a>
-      </div>
-      @endif
-      <div class="modal js-modal">
-        <!-- モーダルウィンドウ -->
-        <div class="modal_bg js-modal-close"></div>
-        <div class="modal_window">
-          <form action="edit" method="post">
-          @csrf
-            <div class="modal-inner-title">
-              <input name="post_title" type="text" value="post_title">
-            </div>
-            <div class="modal-inner-body">
-              <textarea name="post_body" id="" >{{$post->post}}</textarea>
-            </div>
-            <input type="hidden" class="edit-modal-hidden" name="post_id">
-            <div class="edit-modal-btn">
-              <a class="btn btn-danger js-modal-close">閉じる</a>
-              <input type="submit" value="編集" alt="編集" class="btn btn-primary">
-            </div>
-          </form>
-        </div>
-     </div>
-
   </div>
   @endforeach
   </div>
