@@ -32,7 +32,7 @@ class RegisteredRequest extends FormRequest
             'sex' => 'required|numeric|max:3',
             'role' => 'required|numeric|max:4',
             'password' => 'required|alpha_num|min:8|max:30|confirmed',
-            'birth_day' => 'required|date|after:2000-01-01|before:today',
+            'birth_day' => 'required|date|after_or_equal:2000-01-01|before_or_equal:today',
         ];
     }
 
