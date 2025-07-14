@@ -11,6 +11,9 @@ use App\Models\Posts\PostComment;
 use App\Models\Posts\Like;
 use App\Models\Users\User;
 use App\Http\Requests\BulletinBoard\PostFormRequest;
+use App\Http\Requests\BulletinBoard\CommentCreateRequest;
+use App\Http\Requests\BulletinBoard\MainCategoryRequest;
+use App\Http\Requests\BulletinBoard\SubCategoryRequest;
 use Auth;
 
 class PostsController extends Controller
@@ -54,12 +57,13 @@ class PostsController extends Controller
             'post_title' => $request->post_title,
             'post' => $request->post_body
         ]);
+        // リレーション先へidを保存
+        $post->subCategories()->attach($request->post_category_id);
+
         return redirect()->route('post.show');
     }
 
     public function postEdit(PostFormRequest $request){
-        //バリデーション済みのデータを取得
-
         Post::where('id', $request->post_id)->update([
             'post_title' => $request->post_title,
             'post' => $request->post_body,
@@ -71,12 +75,22 @@ class PostsController extends Controller
         Post::findOrFail($id)->delete();
         return redirect()->route('post.show');
     }
-    public function mainCategoryCreate(Request $request){
+    public function mainCategoryCreate(MainCategoryRequest $request){
         MainCategory::create(['main_category' => $request->main_category_name]);
         return redirect()->route('post.input');
     }
 
-    public function commentCreate(Request $request){
+        public function subCategoryCreate(SubCategoryRequest $request){
+        SubCategory::create([
+            'main_category_id' => $request->main_category_id,
+            'sub_category' => $request->sub_category_name
+        ]);
+        return redirect()->route('post.input');
+    }
+
+    public function commentCreate(CommentCreateRequest $request){
+        // バリデーション後データを受け取る
+        $validated=$request->validated();
         PostComment::create([
             'post_id' => $request->post_id,
             'user_id' => Auth::id(),

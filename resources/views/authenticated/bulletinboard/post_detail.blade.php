@@ -4,12 +4,12 @@
     <div class="m-3 detail_container">
       <div class="p-3">
         <div class="detail_inner_head">
-
-          <div class=" alert-danger">
+          <!-- 投稿内容バリデーションエラー -->
+          <div class="error_message">
             @if ($errors->any())
             <ul>
               @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+                <li>{{ dump($error); }}</li>
               @endforeach
             </ul>
             @endif
@@ -52,6 +52,10 @@
   <div class="w-50 p-3">
     <div class="comment_container border m-5">
       <div class="comment_area p-3">
+        <!-- コメント内容エラー -->
+       @error('comment')
+          <div class="error_message">{{ $message }}</div>
+       @enderror
         <p class="m-0">コメントする</p>
         <textarea class="w-100" name="comment" form="commentRequest"></textarea>
         <input type="hidden" name="post_id" form="commentRequest" value="{{ $post->id }}">

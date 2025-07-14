@@ -13,10 +13,12 @@ class SubCategory extends Model
         'sub_category',
     ];
     public function mainCategory(){
+        return $this->berongsto('App\Models\Categories\MainCategory');
         // リレーションの定義
     }
 
     public function posts(){
-        // リレーションの定義
+        return $this->belongsToMany('App\Models\Posts\Post', 'post_sub_categories', 'sub_category_id', 'post_id');
+        //多対多 リレーションの定義
     }
 }
