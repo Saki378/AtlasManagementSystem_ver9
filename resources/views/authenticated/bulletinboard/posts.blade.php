@@ -36,9 +36,10 @@
       <ul>
         @foreach($categories as $category)
           <li class="main_categories" category_id="{{ $category->id }}"><span>{{ $category->main_category }}<span></li>
+
           @foreach($category->subCategories as $subcategory)
-            <!-- クリックしたら対象のサブカテゴリーで検索 -->
-            <a href="">{{$subcategory->sub_category}}</a>
+          <!-- クリックしたら対象のサブカテゴリーで検索 -->
+            <li><input type="submit" name="category_posts" class="category_btn" value="{{$subcategory->sub_category}}" form="postSearchRequest"></li>
           @endforeach
         @endforeach
       </ul>
