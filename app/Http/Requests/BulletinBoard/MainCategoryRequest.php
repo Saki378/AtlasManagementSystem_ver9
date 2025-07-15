@@ -11,6 +11,8 @@ class MainCategoryRequest extends FormRequest
      *
      * @return bool
      */
+    protected $errorBag = 'mainCategory';
+
     public function authorize()
     {
         return true;

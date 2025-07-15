@@ -11,6 +11,8 @@ class SubCategoryRequest extends FormRequest
      *
      * @return bool
      */
+        protected $errorBag = 'subcategory';
+
     public function authorize()
     {
         return true;
