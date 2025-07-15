@@ -11,6 +11,10 @@ class PostFormRequest extends FormRequest
      *
      * @return bool
      */
+
+    // 名前付きエラーバック作成
+    protected $errorBag = 'postupdate';
+
     public function authorize()
     {
         return true;

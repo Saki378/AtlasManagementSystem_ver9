@@ -6,13 +6,11 @@
         <div class="detail_inner_head">
           <!-- 投稿内容バリデーションエラー -->
           <div class="error_message">
-            @if ($errors->any())
             <ul>
-              @foreach ($errors->all() as $error)
-                <li>{{ dump($error); }}</li>
+              @foreach ($errors->postupdate->all() as $error)
+                <li>{{ $error }}</li>
               @endforeach
             </ul>
-            @endif
           </div>
           <div>
             @if(Auth::id() == $post->user->id)
@@ -53,7 +51,7 @@
     <div class="comment_container border m-5">
       <div class="comment_area p-3">
         <!-- コメント内容エラー -->
-       @error('comment')
+       @error('comment','commentcreate')
           <div class="error_message">{{ $message }}</div>
        @enderror
         <p class="m-0">コメントする</p>

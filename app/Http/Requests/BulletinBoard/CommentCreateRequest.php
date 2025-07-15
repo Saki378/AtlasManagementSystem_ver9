@@ -13,6 +13,10 @@ class CommentCreateRequest extends FormRequest
      *
      * @return bool
      */
+
+    // 名前付きエラーバック作成
+    protected $errorBag = 'commentcreate';
+
     public function authorize()
     {
         return true;
