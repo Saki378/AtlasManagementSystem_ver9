@@ -7,7 +7,7 @@
           <!-- 投稿内容バリデーションエラー -->
           <div class="error_message">
             <ul>
-              @foreach ($errors->postupdate->all() as $error)
+              @foreach ($errors->post->all() as $error)
                 <li>{{ $error }}</li>
               @endforeach
             </ul>

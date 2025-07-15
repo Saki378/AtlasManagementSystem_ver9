@@ -13,7 +13,7 @@ class PostFormRequest extends FormRequest
      */
 
     // 名前付きエラーバック作成
-    protected $errorBag = 'postupdate';
+    protected $errorBag = 'post';
 
     public function authorize()
     {

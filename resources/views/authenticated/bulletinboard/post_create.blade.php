@@ -15,16 +15,16 @@
       </select>
     </div>
     <div class="mt-3">
-      @if($errors->first('post_title'))
-      <span class="error_message">{{ $errors->first('post_title') }}</span>
-      @endif
+      @error('post_title','post')
+      <span class="error_message">{{ $message }}</span>
+      @enderror
       <p class="mb-0">タイトル</p>
       <input type="text" class="w-100" form="postCreate" name="post_title" value="{{ old('post_title') }}">
     </div>
     <div class="mt-3">
-      @if($errors->first('post_body'))
-      <span class="error_message">{{ $errors->first('post_body') }}</span>
-      @endif
+      @error('post_body','post')
+      <span class="error_message">{{ $message }}</span>
+      @enderror
       <p class="mb-0">投稿内容</p>
       <textarea class="w-100" form="postCreate" name="post_body">{{ old('post_body') }}</textarea>
     </div>
