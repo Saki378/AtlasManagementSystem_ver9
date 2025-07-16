@@ -1,6 +1,6 @@
 <x-sidebar>
-<p>ユーザー検索</p>
-<div class="search_content w-100 border d-flex">
+  <p>ユーザー検索</p>
+  <div class="search_content w-100 border d-flex">
   <div class="reserve_users_area">
     @foreach($users as $user)
     <div class="border one_person">
@@ -8,7 +8,7 @@
         <span>ID : </span><span>{{ $user->id }}</span>
       </div>
       <div><span>名前 : </span>
-        <a href="{{ route('user.profile', ['id' => $user->id]) }}">
+      <a href="{{ route('user.profile', ['id' => $user->id]) }}">
           <span>{{ $user->over_name }}</span>
           <span>{{ $user->under_name }}</span>
         </a>
@@ -92,6 +92,12 @@
           </div>
           <div class="selected_engineer">
             <label>選択科目</label>
+            <ul>
+              <!-- サブジェクトで検索 -->
+              @foreach($subjects->all() as $subject)
+                <li><span>{{ $subject->subject }}</span><input type="checkbox" id="" name="subjects" value="{{$subject->id}}" form="userSearchRequest"></li>
+              @endforeach
+            </ul>
           </div>
         </div>
       </div>
