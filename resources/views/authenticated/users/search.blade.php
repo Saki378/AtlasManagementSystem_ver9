@@ -95,7 +95,7 @@
             <ul>
               <!-- サブジェクトで検索 -->
               @foreach($subjects->all() as $subject)
-                <li><span>{{ $subject->subject }}</span><input type="checkbox" id="" name="subjects" value="{{$subject->id}}" form="userSearchRequest"></li>
+                <li><span>{{ $subject->subject }}</span><input type="checkbox" id="" name="subjects[]" value="{{$subject->id}}" form="userSearchRequest"></li>
               @endforeach
             </ul>
           </div>
