@@ -35,4 +35,27 @@ class CalendarController extends Controller
         }
         return redirect()->route('calendar.general.show', ['user_id' => Auth::id()]);
     }
+
+    public function delete(Request $request){
+
+        $reserveDate=$request->reserveDate;
+        $reserveTime=$request->reserveTime;
+        $user_id=Auth::id();
+        try{
+        $reserve_setting=ReserveSettings::where('setting_reserve',$reserveDate)->where('setting_part',$reserveTime)->whereHas('users',function ($query) use ($user_id){$query->where('users.id',$user_id);});
+
+            // 中間テーブルによる関連付けを削除
+        $user=User::find($user_id);
+        $user->reserveSettings()->detach($reserve_setting->pluck('id'));
+
+            //ReserveSettingsの1枠増やす。
+        $reserve_setting=new ReserveSettings;
+        $reserve_setting->where('setting_reserve',$reserveDate)->where('setting_part',$reserveTime)->increment('limit_users');
+        }catch(\Exception $e){
+            DB::rollback();
+        }
+
+        return redirect()->route('calendar.general.show', ['user_id' => Auth::id()]);
+    }
+
 }

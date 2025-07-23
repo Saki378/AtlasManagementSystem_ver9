@@ -60,7 +60,7 @@ class CalendarView{
             $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px">' . $day->authReserveDate($day->everyDay())->first()->setting_part . '部参加</p>';
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
           }else{
-            $html[] = '<button type="submit" class="btn btn-danger p-0 w-75 edit-modal-open" reserve_date="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'" reserve_time="'.$reservePart.'" post_id="愛ディー" name="delete_date" style="font-size:12px" data-value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">'. $reservePart .'</button>';
+            $html[] = '<button type="submit" class="btn btn-danger p-0 w-75 edit-modal-open" reserve_date="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'" reserve_time="'.$reservePart.'" data_reserve_time="'.$day->authReserveDate($day->everyDay())->first()->setting_part.'" name="delete_date" style="font-size:12px" data-value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">'. $reservePart .'</button>';
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
           }
         }elseif(!in_array($day->everyDay(), $day->authReserveDay())){
@@ -87,16 +87,16 @@ class CalendarView{
     $html[] = '<div class="modal js-modal">
   <div class="modal__bg js-modal-close"></div>
   <div class="modal__content">
-    <form action="" method="post">
+    <form action="/delete/calendar" method="post" id="deleteParts">
       <div class="w-100">
         <div class="modal-inner-title w-50 ">
           <p type="text" name="reserve_date" class="w-100"></p>
-          <input type="hidden" class="edit-modal-hidden" name="reserve_date" value="">
+          <input type="hidden" class="edit-modal-hidden" name="reserveDate" value="">
         </div>
 
         <div class="modal-inner-body w-50 pt-3 pb-3">
           <p name="reserve_time" ></p>
-          <input type="hidden" class="edit-modal-hidden" name="reserve_time" value="">
+          <input type="hidden" class="edit-modal-hidden" name="reserveTime" value="">
         </div>
         <p>上記の予約をキャンセルしてもよろしいですか？</p>
 
