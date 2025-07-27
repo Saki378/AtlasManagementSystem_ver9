@@ -16,21 +16,22 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Oswald:wght@200&display=swap" rel="stylesheet">
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <script src="https://kit.fontawesome.com/c0e831be90.js" crossorigin="anonymous"></script>
     </head>
     <body class="all_content">
         <div class="d-flex">
             <div class="sidebar">
-                <p><a href="{{ route('top.show') }}">トップ</a></p>
-                <p><a href="/logout">ログアウト</a></p>
-                <p><a href="{{ route('calendar.general.show',['user_id' => Auth::id()]) }}">スクール予約</a></p>
+                <p><img  src="{{ asset ('image/home_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png') }}" ><a href="{{ route('top.show') }}">トップ</a></p>
+                <p><a href="/logout"><img  src="{{ asset ('image/logout_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png') }}" >ログアウト</a></p>
+                <p><a href="{{ route('calendar.general.show',['user_id' => Auth::id()]) }}"><img  src="{{ asset ('image\event_note_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png') }}" >スクール予約</a></p>
 
                 @if(Auth::user()->role != 4)
-                <p><a href="{{ route('calendar.admin.show',['user_id' => Auth::id()]) }}">スクール予約確認</a></p>
-                <p><a href="{{ route('calendar.admin.setting',['user_id' => Auth::id()]) }}">スクール枠登録</a></p>
+                <p><a href="{{ route('calendar.admin.show',['user_id' => Auth::id()]) }}"><img  src="{{ asset ('image\event_available_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png') }}" >スクール予約確認</a></p>
+                <p><a href="{{ route('calendar.admin.setting',['user_id' => Auth::id()]) }}"><img  src="{{ asset ('image\edit_calendar_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png') }}" >スクール枠登録</a></p>
                 @endif
 
-                <p><a href="{{ route('post.show') }}">掲示板</a></p>
-                <p><a href="{{ route('user.show') }}">ユーザー検索</a></p>
+                <p><a href="{{ route('post.show') }}"><img  src="{{ asset ('image\chat_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png') }}" >掲示板</a></p>
+                <p><a href="{{ route('user.show') }}"><img  src="{{ asset ('image\group_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png') }}" >ユーザー検索</a></p>
             </div>
             <div class="main-container">
                 {{ $slot }}

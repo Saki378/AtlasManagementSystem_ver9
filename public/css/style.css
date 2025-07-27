@@ -18,7 +18,7 @@ li {
 
 /* サイドバー */
 .sidebar {
-  width: 150px;
+  width: 180px;
   height: 100vh;
   background-color: #03AAD2;
   font-weight: bold;
@@ -57,9 +57,14 @@ li {
 }
 
 /* トップページ */
+.top_tittle {
+  margin: 10px 0 0 5px;
+}
+
 .user_status {
   border-radius: 10px;
   background: #FFF;
+  box-shadow: 0 0 8px gray;
 }
 
 /* スクール予約関連 */
