@@ -19,13 +19,14 @@ li {
 /* サイドバー */
 .sidebar {
   width: 180px;
-  height: 100vh;
+  height: auto;
   background-color: #03AAD2;
   font-weight: bold;
 }
 
 .main-container {
   width: 100%;
+  background: #ECF1F6;
 }
 
 .sidebar p a {
@@ -88,6 +89,11 @@ li {
   min-width: 100px;
 }
 
+.table thead th {
+  vertical-align: bottom;
+  border: 1px solid #dee2e6;
+}
+
 .day_part {
   color: #494949;
   font-size: 12px;
@@ -107,6 +113,17 @@ li {
 
 .adjust-table-btn {
   width: 70%;
+}
+
+.calender_container {
+  border-radius: 5px;
+  background: #FFF;
+  box-shadow: 0 0 8px gray;
+}
+
+.text-right input {
+  padding: 5px;
+  font-size: small;
 }
 
 /* モーダル */
