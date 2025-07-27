@@ -32,6 +32,30 @@ li {
   color: #FFF;
 }
 
+/* ゲストページ */
+
+.gest_page {
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0 0 8px gray;
+}
+
+.gest_page p {
+  color: red;
+  font-size: x-small;
+  margin-bottom: 0;
+
+}
+
+.rogo {
+  padding: 100px 0 30px;
+  text-align: center;
+}
+
+.rogo img {
+  height: 50px;
+}
+
 /* トップページ */
 .user_status {
   border-radius: 10px;
