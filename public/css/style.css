@@ -99,8 +99,16 @@ li {
   font-size: 12px;
 }
 
+.day_part a {
+  padding-right: 2rem;
+}
+
+.table-w {
+  width: 90%;
+}
+
 .adjust-table {
-  width: 70% !important;
+  width: 90% !important;
 }
 
 .adjust-table td {
@@ -109,10 +117,19 @@ li {
 
 .adjust-area p {
   justify-content: space-around;
+  color: black;
+  padding: 0 10%;
 }
 
+.adjust-area p input {
+  width: 40%;
+  text-align: center;
+}
+
+
 .adjust-table-btn {
-  width: 70%;
+  width: 90%;
+  text-align: right;
 }
 
 .calender_container {
@@ -124,6 +141,31 @@ li {
 .text-right input {
   padding: 5px;
   font-size: small;
+}
+
+/* スクール詳細 */
+.detail-table-container {
+  border-radius: 5px;
+  background: #FFF;
+  padding: 1%;
+  box-shadow: 0 0 8px gray;
+}
+
+.detail-table {
+  width: 100%;
+}
+
+.detail-table th {
+  background-color: #03AAD2;
+  color: #EEE;
+}
+
+.detail-table tr:nth-child(odd) {
+  background-color: #d7f4fc;
+}
+
+.detail-table tr:nth-child(even) {
+  background-color: #FFF;
 }
 
 /* モーダル */
@@ -328,10 +370,8 @@ li {
   flex-wrap: wrap;
   width: 800px;
   margin: 10px auto;
-  height: 80vh;
   overflow: scroll;
   padding: 10px;
-  background: #FFF;
   border-radius: 5px;
 }
 
@@ -339,10 +379,20 @@ li {
   font-size: 12px;
 }
 
-.one_person {
-  width: 250px;
-  height: 250px;
+.reserve_users_area span:first-child {
+  color: #808080;
 }
+
+.one_person {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background: #FFF;
+  box-shadow: 0 0 8px gray;
+}
+
 
 .search_conditions span {
   cursor: pointer;

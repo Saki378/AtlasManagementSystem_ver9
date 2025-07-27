@@ -1,8 +1,8 @@
 <x-sidebar>
-<div class="vh-100 pt-2 pb-2" style="height:100%;">
+<div class="pt-5 pb-5" style="height:100%;">
   <div class="border w-75 m-auto pt-3 pb-3 calender_container">
     <div class="w-75 m-auto " style="border-radius:5px;">
-      <p class="text-center">{{ $calendar->getTitle() }}</p>
+      <p class="text-center pt-3">{{ $calendar->getTitle() }}</p>
       <div class="w-75">
         {!! $calendar->render() !!}
       </div>
