@@ -209,8 +209,13 @@ li {
 
 .post_create_area textarea {
   resize: none;
-  height: 300px;
+  height: 200px;
   white-space: pre-wrap;
+}
+
+.post_create_btn input {
+
+  padding: 5px 10px;
 }
 
 .detail_container {
