@@ -117,7 +117,6 @@ li {
 
 .adjust-area p {
   justify-content: space-around;
-  color: black;
   padding: 0 10%;
 }
 
@@ -195,6 +194,10 @@ li {
 }
 
 /* 掲示板 */
+.board_area {
+  min-height: 100vh;
+}
+
 .sub_categories {
   display: none;
 }
@@ -217,11 +220,97 @@ li {
 .post_area {
   background: #FFF;
   border-radius: 10px;
+  color: #808080;
+}
+
+
+.post_area a {
+  color: black;
+  font-weight: bold;
 }
 
 .post_bottom_area {
   justify-content: space-between;
 }
+
+.post_sub {
+  background-color: #03AAD2;
+  padding: 5px;
+  color: #FFF;
+  font-size: 12px;
+  border-radius: 10px;
+}
+
+.post_sub p {
+  margin-bottom: 0;
+}
+
+.post_btn {
+  text-align: center;
+}
+
+.post_btn a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.such_post_btn_box {
+  margin-top: 16px;
+}
+
+.such-btn {
+  border-radius: 10px;
+}
+
+.such-btn-a {
+  background-color: #ECF1F6;
+  font-size: 12px;
+  color: #808080;
+  border: solid 1px #808080;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 5px 6px;
+  width: 70%;
+}
+
+.such-btn-b {
+  background-color: #03AAD2;
+  border: solid 1px #808080;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-size: 12px;
+  padding: 5px;
+  color: #FFF;
+  width: 30%;
+  cursor: pointer;
+}
+
+.such_post_btn {
+  cursor: pointer;
+  font-size: 12px;
+  padding: 5px;
+  color: #FFF;
+  width: 50%;
+  border-radius: 10px;
+  border: solid 1px #808080;
+}
+
+.pink {
+  background-color: palevioletred;
+}
+
+.yellow {
+  background-color: #fcc800;
+}
+
+.such_categories {
+  margin-top: 16px;
+}
+
+.such_categories p {
+  margin-bottom: 0;
+}
+
 
 .like_btn,
 .un_like_btn {
@@ -331,6 +420,10 @@ li {
   font-size: 12px;
 }
 
+.post_status {
+  flex-wrap: ;
+}
+
 .post_status span {
   font-size: 12px;
 }
@@ -362,6 +455,63 @@ li {
 .sub_categories li input {
   list-style: none;
   cursor: pointer;
+}
+
+.accordion-003 summary {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  color: black;
+  cursor: pointer;
+  border-bottom: 1px solid #808080;
+}
+
+.accordion-003 summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion-003 summary::after {
+  transform: translateY(-25%) rotate(45deg);
+  width: 7px;
+  height: 7px;
+  margin-left: 5px;
+  border-bottom: 2px solid #808080;
+  border-right: 2px solid #808080;
+  content: '';
+  transition: transform .1s;
+}
+
+.accordion-003[open] summary::after {
+  transform: rotate(225deg);
+}
+
+.accordion-003 input[type=submit] {
+  appearance: none;
+}
+
+.accordion-003 p {
+  width: 80%;
+  color: black;
+  transform: translateY(-10px);
+  opacity: 0;
+  margin: 10px auto 0;
+  border-bottom: 1px solid #808080;
+  transition: transform .1s, opacity .5s;
+}
+
+.accordion-003 input {
+  border: none;
+  background-color: #ECF1F6;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+
+.accordion-003[open] p {
+  transform: none;
+  opacity: 1;
 }
 
 /* ユーザー検索 */

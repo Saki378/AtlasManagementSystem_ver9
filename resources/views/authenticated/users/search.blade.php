@@ -1,15 +1,14 @@
 <x-sidebar>
-  <p>ユーザー検索</p>
   <div class="search_content w-100 border d-flex">
   <div class="reserve_users_area">
     @foreach($users as $user)
-    <div class="border one_person">
+    <div class="border one_person ">
       <div>
         <span>ID : </span><span>{{ $user->id }}</span>
       </div>
       <div><span>名前 : </span>
-      <a href="{{ route('user.profile', ['id' => $user->id]) }}">
-          <span>{{ $user->over_name }}</span>
+        <a href="{{ route('user.profile', ['id' => $user->id]) }}">
+          <span style="color:#007bff;">{{ $user->over_name }}</span>
           <span>{{ $user->under_name }}</span>
         </a>
       </div>
@@ -32,13 +31,13 @@
       </div>
       <div>
         @if($user->role == 1)
-        <span>権限 : </span><span>教師(国語)</span>
+        <span>役職 : </span><span>教師(国語)</span>
         @elseif($user->role == 2)
-        <span>権限 : </span><span>教師(数学)</span>
+        <span>役職 : </span><span>教師(数学)</span>
         @elseif($user->role == 3)
-        <span>権限 : </span><span>講師(英語)</span>
+        <span>役職 : </span><span>講師(英語)</span>
         @else
-        <span>権限 : </span><span>生徒</span>
+        <span>役職 : </span><span>生徒</span>
         @endif
       </div>
       <div>
@@ -102,10 +101,10 @@
         </div>
       </div>
       <div>
-        <input type="reset" value="リセット" form="userSearchRequest">
+        <input class="such-btn" type="submit" name="search_btn" value="検索" form="userSearchRequest">
       </div>
       <div>
-        <input type="submit" name="search_btn" value="検索" form="userSearchRequest">
+        <input class="btn btn-primary" type="reset" value="リセット" form="userSearchRequest">
       </div>
     </div>
     <form action="{{ route('user.show') }}" method="get" id="userSearchRequest"></form>
