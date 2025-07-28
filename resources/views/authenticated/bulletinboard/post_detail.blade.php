@@ -3,19 +3,23 @@
   <div class="w-50 mt-5">
     <div class="m-3 detail_container">
       <div class="p-3">
+        <div class="error_message">
+          <ul>
+            @foreach ($errors->post->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div>
         <div class="detail_inner_head">
-          <!-- 投稿内容バリデーションエラー -->
-          <div class="error_message">
-            <ul>
-              @foreach ($errors->post->all() as $error)
-                <li>{{ $error }}</li>
-              @endforeach
-            </ul>
-          </div>
           <div>
+            @foreach($post->subCategories as $subcategory)
+            <p class="post_sub">{{ $subcategory->sub_category }}</p>
+            @endforeach
+          </div>
+          <div class="mypost_edit_btn">
             @if(Auth::id() == $post->user->id)
-            <span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
-            <a href="{{ route('post.delete', ['id' => $post->id]) }}" onclick='return confirm("本当に削除しますか？")'>削除</a>
+            <span class="edit-modal-open btn btn-primary" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
+            <a class="btn btn-danger" href="{{ route('post.delete', ['id' => $post->id]) }}" onclick='return confirm("本当に削除しますか？")'>削除</a>
             @endif
           </div>
         </div>
@@ -57,7 +61,9 @@
         <p class="m-0">コメントする</p>
         <textarea class="w-100" name="comment" form="commentRequest"></textarea>
         <input type="hidden" name="post_id" form="commentRequest" value="{{ $post->id }}">
-        <input type="submit" class="btn btn-primary" form="commentRequest" value="投稿">
+        <div class="comment_container_btn">
+          <input type="submit" class="btn btn-primary" form="commentRequest" value="投稿">
+        </div>
         <form action="{{ route('comment.create') }}" method="post" id="commentRequest">{{ csrf_field() }}</form>
       </div>
     </div>

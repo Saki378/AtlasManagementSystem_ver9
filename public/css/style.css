@@ -221,6 +221,15 @@ li {
 
 .detail_container {
   background: #FFF;
+  border-radius: 10px;
+}
+
+.mypost_edit_btn span {
+  font-size: 12px;
+}
+
+.mypost_edit_btn a {
+  font-size: 12px;
 }
 
 .post_area {
@@ -409,6 +418,7 @@ li {
 /* 掲示板 コメント */
 .comment_container {
   background: #FFF;
+  border-radius: 10px;
 }
 
 .comment_area p,
@@ -418,12 +428,16 @@ li {
 }
 
 .comment_area textarea {
-  height: 300px;
+  height: 200px;
   resize: none;
 }
 
 .comment_container span {
   font-size: 12px;
+}
+
+.comment_container_btn {
+  text-align: right
 }
 
 .post_status {
