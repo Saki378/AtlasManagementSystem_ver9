@@ -205,6 +205,7 @@ li {
 .post_create_area {
   background: #FFF;
   border-radius: 10px;
+  padding: 5% 4% 3%;
 }
 
 .post_create_area textarea {
