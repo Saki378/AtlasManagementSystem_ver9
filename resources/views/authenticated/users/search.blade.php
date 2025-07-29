@@ -107,7 +107,7 @@
         </div>
       </div>
       <div>
-        <input class="such-btn " type="submit" name="search_btn" value="検索" form="userSearchRequest">
+        <input class="such-user-btn " type="submit" name="search_btn" value="検索" form="userSearchRequest">
       </div>
       <div>
         <input class="such-reset-btn" type="reset" value="リセット" form="userSearchRequest">
