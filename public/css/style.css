@@ -440,10 +440,6 @@ li {
   text-align: right
 }
 
-.post_status {
-  flex-wrap: ;
-}
-
 .post_status span {
   font-size: 12px;
 }
@@ -538,10 +534,9 @@ li {
 .reserve_users_area {
   display: flex;
   flex-wrap: wrap;
-  width: 800px;
-  margin: 10px auto;
+  width: 75%;
   overflow: scroll;
-  padding: 10px;
+  padding: 1% 2%;
   border-radius: 5px;
 }
 
@@ -553,8 +548,12 @@ li {
   color: #808080;
 }
 
+.reserve_users_area_container {
+  width: 25%;
+}
+
 .one_person {
-  width: 200px;
+  width: 180px;
   height: 200px;
   margin: 10px;
   padding: 10px;
@@ -575,10 +574,128 @@ li {
 
 .subject_edit_btn {
   font-size: 12px;
-  color: #0000FF;
+  color: #03AAD2;
+  cursor: pointer;
+
+}
+
+.search_area {
+  min-height: 100vh;
+}
+
+.search_area p {
+  color: #004973;
+}
+
+
+.search_area_text input {
+  width: 100%;
+  background-color: lightgray;
+  border-radius: 10px;
+  border: none;
+  padding: 8px;
+  font-size: 13px;
+}
+
+.search_area label {
+  color: #004973;
+  margin-top: 10px;
+}
+
+.search_area_box {
+  display: block;
+  background-color: lightgray;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+  font-size: 13px;
+}
+
+.search_conditions_box {
+  width: 100%;
+  border-bottom: solid 1px #808080;
+  padding-bottom: 0;
+}
+
+.search_conditions {
+  position: relative;
+  border-bottom: #004973;
+  margin-bottom: 1%;
+
+}
+
+.search_conditions_triangle {
+  transform: translateY(-25%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  margin-left: 20px;
+  margin-top: 25px;
+  border-bottom: 2px solid #004973;
+  border-right: 2px solid #004973;
+  content: '';
+  transition: transform .1s;
+}
+
+.search_conditions_inner {
+  background-color: #ECF1F6;
+}
+
+.search_conditions_inner label {
+  display: block;
+}
+
+.selected_engineer li {
+  margin-right: 10px;
+}
+
+.such-btn {
+  width: 100%;
+  background-color: #03AAD2;
+  color: #FFF;
+  margin-top: 10%;
+  padding: 5px;
+  border: none;
   cursor: pointer;
 }
 
+.such-reset-btn {
+  width: 100%;
+  color: #03AAD2;
+  border: none;
+  background-color: #ECF1F6;
+  cursor: pointer;
+  margin-top: 5%;
+  padding: 5px;
+}
+
+
+
+
+
+/* ユーザー詳細 */
+
+.triangle {
+  transform: translateY(-25%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  margin-top: 4px;
+  margin-left: 6px;
+  border-bottom: 2px solid #03AAD2;
+  border-right: 2px solid #03AAD2;
+  content: '';
+  transition: transform .1s;
+}
+
+.active {
+  transform: rotate(225deg);
+}
+
 .subject_inner {
-  display: none;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.subject_inner_item input {
+  margin-right: 10px;
 }
