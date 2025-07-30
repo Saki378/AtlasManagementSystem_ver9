@@ -22,6 +22,7 @@ li {
   height: auto;
   background-color: #03AAD2;
   font-weight: bold;
+  min-height: 100vh;
 }
 
 .main-container {
@@ -194,9 +195,7 @@ li {
 }
 
 /* 掲示板 */
-.board_area {
-  min-height: 100vh;
-}
+
 
 .sub_categories {
   display: none;
@@ -579,9 +578,6 @@ li {
 
 }
 
-.search_area {
-  min-height: 100vh;
-}
 
 .search_area p {
   color: #004973;
