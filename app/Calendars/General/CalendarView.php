@@ -17,8 +17,8 @@ class CalendarView{
 
   function render(){
     $html = [];
-    $html[] = '<div class="calendar text-center">';
-    $html[] = '<table class="table">';
+    $html[] = '<div class="calendar w-100 text-center">';
+    $html[] = '<table class="table m-auto border table-w">';
     $html[] = '<thead>';
     $html[] = '<tr>';
     $html[] = '<th>月</th>';

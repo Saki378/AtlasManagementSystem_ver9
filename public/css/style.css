@@ -105,7 +105,7 @@ li {
 }
 
 .table-w {
-  width: 90%;
+  width: 90% !important;
 }
 
 .adjust-table {
@@ -127,7 +127,7 @@ li {
 }
 
 
-.adjust-table-btn {
+.calender-table-btn {
   width: 90%;
   text-align: right;
 }
